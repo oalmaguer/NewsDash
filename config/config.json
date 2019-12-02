@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "database_development",
+    "password": "mfs2231996",
+    "database": "newsdash",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false

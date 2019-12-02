@@ -1,0 +1,59 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Bebas Neue";
+  font-size: 18px;
+  color: white;
+  background-image: url("../background.jpeg");
+}
+
+.container {
+  margin-top: 25px;
+}
+h5 {
+  padding: 20px 0;
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #333;
+  text-align: center;
+  background: #efeee7;
+}
+
+.card {
+  width: 14rem;
+  margin: 10px;
+}
+
+nav {
+  font-family: "Bebas Neue";
+  font-size: 30px;
+}
+
+#title {
+  font-size: 45px;
+}
+
+h4 {
+  text-align: center;
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 25px;
+  color: gray;
+}
+
+hr {
+  background-color: lightgray;
+}
+
+.footer {
+  background-color: white;
+  width: 100%;
+  margin: auto;
+}
+
+.recentlinks {
+  color: lightgray;
+}

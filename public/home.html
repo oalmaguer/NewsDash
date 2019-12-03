@@ -1,6 +1,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
@@ -12,6 +16,7 @@
     />
     <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../public/style.css" />
+    <script type="text/javascript" src="home.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -55,12 +60,11 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              Categories **Possible icebox
+              Categories
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">Politics</a>
               <a class="dropdown-item" href="#">Science</a>
-              <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Education</a>
             </div>
           </li>
@@ -115,57 +119,214 @@
           <div class="row">
             <div class="col-sm-4">
               <div class="card">
-                <img src="../placeholder.png" class="card-img-top" alt="..." />
+                <img src="../placeholder.png" class="card-img-top card1Img" alt="..." />
                 <div class="card-body">
-                  <h3 class="card-title">Headline</h3>
-                  <a href="#" class="btn btn-primary">Read more...</a>
+                  <h3 class="card-title card1-hl">Headline</h3>
+                  <p id="pub-date1" class ="publish_date">Published on:</p>
+                 
+                  <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Read More
+  </button>
+ 
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalh1">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="modalbody1">
+         
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
                 </div>
               </div>
             </div>
             <div class="col-sm-4">
               <div class="card">
-                <img src="../placeholder.png" class="card-img-top" alt="..." />
+                <img src="../placeholder.png" class="card-img-top card2Img" alt="..." />
                 <div class="card-body">
-                  <h3 class="card-title">Headline</h3>
-                  <a href="#" class="btn btn-primary">Read more...</a>
+                  <h3 class="card-title card2-hl">Headline</h3>
+                  <p id="pub-date2"class ="publish_date">Published on:</p>
+                 
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                      Read More
+                    </button>
+                   
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            ...
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                 </div>
               </div>
             </div>
+
+
             <div class="col-sm-4">
               <div class="card">
-                <img src="../placeholder.png" class="card-img-top" alt="..." />
+                <img src="../placeholder.png" class="card-img-top card3Img" alt="..." />
                 <div class="card-body">
-                  <h3 class="card-title">Headline</h3>
-                  <a href="#" class="btn btn-primary">Read more...</a>
+                  <h3 class="card-title card3-hl">Headline</h3>
+                  <p id="pub-date3" class ="publish_date">Published on:</p>
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Read More
+  </button>
+ 
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
                 </div>
               </div>
             </div>
+
           </div>
           <div class="row">
             <div class="col-sm-4">
               <div class="card">
-                <img src="../placeholder.png" class="card-img-top" alt="..." />
+                <img src="../placeholder.png" class="card-img-top card4Img" alt="..." />
                 <div class="card-body">
-                  <h3 class="card-title">Headline</h3>
-                  <a href="#" class="btn btn-primary">Read more...</a>
+                  <h3 class="card-title card4-hl">Headline</h3>
+                  <p id="pub-date4" class ="publish_date">Published on:</p>
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Read More
+  </button>
+ 
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
                 </div>
               </div>
             </div>
+
+
             <div class="col-sm-4">
               <div class="card">
-                <img src="../placeholder.png" class="card-img-top" alt="..." />
+                <img src="../placeholder.png" class="card-img-top card5Img" alt="..." />
                 <div class="card-body">
-                  <h3 class="card-title">Headline</h3>
-                  <a href="#" class="btn btn-primary">Read more...</a>
+                  <h3 class="card-title card5-hl">Headline</h3>
+                  <p id="pub-date5"class ="publish_date">Published on:</p>
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Read More
+  </button>
+ 
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
                 </div>
               </div>
             </div>
+
+
             <div class="col-sm-4">
               <div class="card">
-                <img src="../placeholder.png" class="card-img-top" alt="..." />
+                <img src="../placeholder.png" class="card-img-top card6Img" alt="..." />
                 <div class="card-body">
-                  <h3 class="card-title">Headline</h3>
-                  <a href="#" class="btn btn-primary">Read more...</a>
+                  <h3 class="card-title card6-hl">Headline</h3>
+                  <p id="pub-date6"class ="publish_date">Published on:</p>
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Read More
+  </button>
+ 
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
                 </div>
               </div>
             </div>
@@ -176,6 +337,7 @@
       <footer>
       <a href="">News Dash</a>
     </footer>
-    </div> 
+    </div>
+
   </body>
 </html>

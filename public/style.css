@@ -9,6 +9,7 @@ body {
 
 .container {
   margin-top: 25px;
+  column-gap: 5px;
 }
 h5 {
   padding: 20px 0;
@@ -21,7 +22,7 @@ h5 {
 }
 
 .card {
-  width: 14rem;
+  width: 15rem;
   margin: 10px;
 }
 
@@ -56,4 +57,19 @@ hr {
 
 .recentlinks {
   color: lightgray;
+}
+
+.publish_date {
+  color: lightgray;
+  line-height: 5px;
+  font-size: 16px;
+}
+
+footer {
+  background: white;
+  color: black;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  margin-top: 15px;
 }

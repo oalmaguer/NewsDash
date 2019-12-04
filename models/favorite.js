@@ -1,5 +1,5 @@
 //model is going to be composed of a news story that is a favorite
-module.exports = function(seqeulize, Datatypes) {
+module.exports = function(sequelize, Datatypes) {
   var Favorite = sequelize.define("Favorite", {
     headline: {
       type: Datatypes.STRING,

@@ -24,6 +24,17 @@ h5 {
 .card {
   width: 15rem;
   margin: 10px;
+  position: relative;
+}
+.like {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  background: rgba(51, 143, 143, 0.651);
+}
+
+.like:hover {
+  background: teal;
 }
 
 nav {

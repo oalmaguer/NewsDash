@@ -9,10 +9,6 @@ module.exports = function(sequelize, Datatypes) {
       type: Datatypes.STRING,
       allowNull: 0
     },
-    year: {
-      type: Datatypes.INT,
-      allowNull: 0
-    },
     image: {
       type: Datatypes.image,
       allowNull: 0

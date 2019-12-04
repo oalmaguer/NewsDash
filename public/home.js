@@ -33,6 +33,21 @@ $.ajax({
   $("#pub-date6").text(response.articles[5].publishedAt.slice(0, 10));
 
   $("#modalh1").text(response.articles[0].title);
-  $("#modalbody1").text(response.articles[0].content);
+  $("#modalbody1").text(response.articles[0].description);
   $(".modal-body").css("color", "black");
+
+  $("#modalh2").text(response.articles[1].title);
+  $("#modalbody2").text(response.articles[1].description);
+
+  $("#modalh3").text(response.articles[2].title);
+  $("#modalbody3").text(response.articles[2].description);
+
+  $("#modalh4").text(response.articles[3].title);
+  $("#modalbody4").text(response.articles[3].description);
+
+  $("#modalh5").text(response.articles[4].title);
+  $("#modalbody5").text(response.articles[4].description);
+
+  $("#modalh6").text(response.articles[5].title);
+  $("#modalbody6").text(response.articles[5].description);
 });

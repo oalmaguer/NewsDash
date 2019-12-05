@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <link type="text/css" rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="username"></h1>
+    <h1 id="userDescription"></h1>
+    <form action="/api/description" method="POST">
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1" class="textarea1">Example textarea</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1"  class="textarea1" name="information" rows="3"></textarea>
+        <input type="submit" />
+      </div>
+    </form>
+
+    <!-- <h1>Register Form</h1>
+      <form action="/api/auth" method="POST">
+        <input type="text" name="username" placeholder="Username" required />
+        <input type="submit" />
+      </form> -->
+ 
+    <script>
+      var user;
+      var userDesc;
+
+      $.post("/userDesc", { userDesc: userDesc}, function(data) {
+        if (data != null) {
+          $("#userDescription").text(data);
+        } else if (user === undefined) {
+          window.location.replace("/error");
+        }
+      })
+      
+      $.post("/userProfile", { user: user}, function(data) {
+        console.log(data);
+        if (data == "") {
+          window.location.assign("/error");
+        }
+        
+        if (data != null) {
+          $("#username").text(data);
+        } else if (user === undefined) {
+          window.location.replace("/error");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -4,7 +4,7 @@ body {
   font-family: "Bebas Neue";
   font-size: 18px;
   color: white;
-  background-image: url("../background.jpeg");
+  background-image: url("./background.jpeg");
 }
 
 .container {
@@ -68,6 +68,10 @@ hr {
   color: lightgray;
   line-height: 5px;
   font-size: 16px;
+}
+
+#textarea1 {
+  visibility: hidden;
 }
 
 #welcome {

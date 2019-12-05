@@ -1,6 +1,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -14,13 +15,19 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <link type="text/css" rel="stylesheet" href="./style.css">
+    <base href="/">
     <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../public/style.css" />
-    <script type="text/javascript" src="home.js"></script>
+    
+    
   </head>
   <body>
-    <a class ="loginstuff"href="">Login</a>
-    <a class = "loginstuff" href="">Register</a>
+    <a class ="loginstuff"href="/login" id="login">Login</a>
+    <a class = "loginstuff" href="/register" id="register">Register</a>
+    <a id="user" href="/profile">
+    <a id="logout" href="/logout" class="ml-5 logout"></a>
+
+    
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <button
         class="navbar-toggler"
@@ -37,7 +44,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <a id = "title" class="navbar-brand" href="home.html">
           <img
-            src="../news.jpg"
+            src="./news.jpg"
             width="50"
             height="50"
             class="d-inline-block align-center"
@@ -50,7 +57,7 @@
             <a class="nav-link" href="home.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="favorites.html">| My Favorites</a>
+            <a class="nav-link" href="/profile">| My Profile</a>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -73,13 +80,12 @@
         <form class="form-inline my-2 my-lg-0">
           <input
             class="form-control mr-sm-2"
+            id="searchForm"
             type="search"
             placeholder="Search"
             aria-label="Search"
           />
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-            Search
-          </button>
+         <input type="button" class="newsBtn" value="search">
         </form>
       </div>
     </nav>
@@ -89,27 +95,27 @@
           <h4>most recent stories</h4>
           <hr>
           <div class = "row">
-            <a class ="recentlinks" href="#">News Story 1</a>
+            <a class ="recentlinks" id="recent1" href="#">News Story 1</a>
           </div>
           <hr>
           <div class="row">
-            <a class ="recentlinks" href="#">News Story 2</a>
+            <a class ="recentlinks" id="recent2" href="#">News Story 2</a>
           </div>
           <hr>
           <div class="row">
-            <a class ="recentlinks" href="#">News Story 3</a>
+            <a class ="recentlinks" id="recent3" href="#">News Story 3</a>
           </div>
           <hr>
           <div class="row">
-            <a class ="recentlinks" href="#">News Story 4</a>
+            <a class ="recentlinks" id="recent4" href="#">News Story 4</a>
           </div>
           <hr>
           <div class="row">
-            <a class ="recentlinks" href="#">News Story 5</a>
+            <a class ="recentlinks" id="recent5" href="#">News Story 5</a>
           </div>
           <hr>
           <div class="row">
-            <a class ="recentlinks" href="#">News Story 6</a>
+            <a class ="recentlinks" id="recent6" href="#">News Story 6</a>
           </div>
           <hr>
         </div>
@@ -120,8 +126,11 @@
           <div class="row">
             <div class="col-sm-4">
               <div class="card">
-                <img src="../placeholder.png" class="card-img-top card1Img" alt="..." />
-                <button id="likeBut1" class="like">👍</button>
+                <img src="./placeholder.png" class="card-img-top card1Img" alt="..." />
+                <!-- <form action="api/favorites" method="POST"> -->
+                  <input type="button" id="likeBut1" class="like" value="👍"></button>
+                <!-- </form> -->
+               
                 <div class="card-body">
                   <h3 class="card-title card1-hl">Headline</h3>
                   <p id="pub-date1" class ="publish_date">Published on:</p>
@@ -159,7 +168,7 @@
             <div class="col-sm-4">
               <div class="card">
                 <img src="../placeholder.png" class="card-img-top card2Img" alt="..." />
-                <button id="likeBut2" class="like">👍</button>
+                <input type="submit" id="likeBut2" class="like" value="👍"></button>
                 <div class="card-body">
                   <h3 class="card-title card2-hl">Headline</h3>
                   <p id="pub-date2"class ="publish_date">Published on:</p>
@@ -197,7 +206,7 @@
             <div class="col-sm-4">
               <div class="card">
                 <img src="../placeholder.png" class="card-img-top card3Img" alt="..." />
-                <button id="likeBut3" class="like">👍</button>
+                <input type="submit" id="likeBut3" class="like" value="👍"></button>
                 <div class="card-body">
                   <h3 class="card-title card3-hl">Headline</h3>
                   <p id="pub-date3" class ="publish_date">Published on:</p>
@@ -234,7 +243,7 @@
             <div class="col-sm-4">
               <div class="card">
                 <img src="../placeholder.png" class="card-img-top card4Img" alt="..." />
-                <button id="likeBut4" class="like">👍</button>
+                <input type="submit" id="likeBut4" class="like" value="👍"></button>
                 <div class="card-body">
                   <h3 class="card-title card4-hl">Headline</h3>
                   <p id="pub-date4" class ="publish_date">Published on:</p>
@@ -270,7 +279,7 @@
             <div class="col-sm-4">
               <div class="card">
                 <img src="../placeholder.png" class="card-img-top card5Img" alt="..." />
-                <button id="likeBut5" class="like">👍</button>
+                <input type="submit" id="likeBut5" class="like" value="👍"></button>
                 <div class="card-body">
                   <h3 class="card-title card5-hl">Headline</h3>
                   <p id="pub-date5"class ="publish_date">Published on:</p>
@@ -306,7 +315,7 @@
             <div class="col-sm-4">
               <div class="card">
                 <img src="../placeholder.png" class="card-img-top card6Img" alt="..." />
-                <button id="likeBut6" class="like">👍</button>
+                <input type="submit" id="likeBut6" class="like" value="👍"></button>
                 <div class="card-body">
                   <h3 class="card-title card6-hl">Headline</h3>
                   <p id="pub-date6"class ="publish_date">Published on:</p>
@@ -340,6 +349,167 @@
         </div>
       </div>
     </div>
+    
+    <script>
+
+      favorites = [];
+    
+    var apiKey = "23de237b3d5a45c2becdee407614db97";
+
+    $(document).ready(function() {
+      searchNews("World");
+
+      function searchNews(search) {
+
+        $("#likeBut1").removeData();
+      $("#likeBut2").removeData();
+    $("#likeBut3").removeData();
+    $("#likeBut4").removeData();
+    $("#likeBut5").removeData();
+    $("#likeBut6").removeData();
+
+        $.ajax({
+  url:
+    "https://newsapi.org/v2/everything?q=" +
+     search +
+    "&apiKey=23de237b3d5a45c2becdee407614db97",
+     method: "GET"
+}).then(function(response) {
+  console.log(response);
+
+  $(".card1-hl").text(response.articles[0].title);
+  $(".card2-hl").text(response.articles[1].title);
+  $(".card3-hl").text(response.articles[2].title);
+  $(".card4-hl").text(response.articles[3].title);
+  $(".card5-hl").text(response.articles[4].title);
+  $(".card6-hl").text(response.articles[5].title);
+
+  $(".card1Img").attr("src", response.articles[0].urlToImage);
+  $(".card2Img").attr("src", response.articles[1].urlToImage);
+  $(".card3Img").attr("src", response.articles[2].urlToImage);
+  $(".card4Img").attr("src", response.articles[3].urlToImage);
+  $(".card5Img").attr("src", response.articles[4].urlToImage);
+  $(".card6Img").attr("src", response.articles[5].urlToImage);
+
+  $("#pub-date1").text(response.articles[0].publishedAt.slice(0, 10));
+  $("#pub-date2").text(response.articles[1].publishedAt.slice(0, 10));
+  $("#pub-date3").text(response.articles[2].publishedAt.slice(0, 10));
+  $("#pub-date4").text(response.articles[3].publishedAt.slice(0, 10));
+  $("#pub-date5").text(response.articles[4].publishedAt.slice(0, 10));
+  $("#pub-date6").text(response.articles[5].publishedAt.slice(0, 10));
+
+  $("#modalh1").text(response.articles[0].title);
+  $("#modalbody1").text(response.articles[0].description);
+  $(".modal-body").css("color", "black");
+
+  $("#modalh2").text(response.articles[1].title);
+  $("#modalbody2").text(response.articles[1].description);
+
+  $("#modalh3").text(response.articles[2].title);
+  $("#modalbody3").text(response.articles[2].description);
+
+  $("#modalh4").text(response.articles[3].title);
+  $("#modalbody4").text(response.articles[3].description);
+
+  $("#modalh5").text(response.articles[4].title);
+  $("#modalbody5").text(response.articles[4].description);
+
+  $("#modalh6").text(response.articles[5].title);
+  $("#modalbody6").text(response.articles[5].description);
+
+
+  $("#likeBut1").attr("data-title", response.articles[0].title);
+  $("#likeBut1").attr("data-url", response.articles[0].url);
+
+  $("#likeBut2").attr("data-title", response.articles[1].title);
+  $("#likeBut2").attr("data-url", response.articles[1].url);
+
+  $("#likeBut3").attr("data-title", response.articles[3].title);
+  $("#likeBut3").attr("data-url", response.articles[3].url);
+
+  $("#likeBut4").attr("data-title", response.articles[4].title);
+  $("#likeBut4").attr("data-url", response.articles[4].url);
+
+  $("#likeBut5").attr("data-title", response.articles[5].title);
+  $("#likeBut5").attr("data-url", response.articles[5].url);
+
+  $("#likeBut6").attr("data-title", response.articles[6].title);
+  $("#likeBut6").attr("data-url", response.articles[6].url);
+
+});
+
+
+    
+        
+
+          var user;
+           $.post("/userInfo", {user: user}, function(data) {
+          if (data != null) {
+            $("#user").text(data);
+            $("#login").css("visibility", "hidden");
+            $("#register").css("visibility", "hidden");
+            $(".logout").text("Logout");
+          } else {
+            console.log("No user");
+          }
+        })
+      } // end of search news function
+
+      $(".newsBtn").on("click", function() {
+   
+    var search = $("#searchForm").val();
+    searchNews(search);
+
+              });
+      
+    
+
+    $("#likeBut1").on("click", function() {
+        var newsTitle = $("#likeBut1").attr('data-title');
+        var newsLink = $("#likeBut1").attr('data-url');
+        favorites.push(newsTitle, newsLink); // {title: title, link: link}
+       console.log(favorites);
+       })
+
+       $("#likeBut2").on("click", function() {
+        var newsTitle = $("#likeBut2").attr('data-title');
+        var newsLink = $("#likeBut2").attr('data-url');
+        favorites.push(newsTitle, newsLink); // {title: title, link: link}
+       console.log(favorites);
+       })
+
+       $("#likeBut1").on("click", function() {
+        var newsTitle = $("#likeBut3").attr('data-title');
+        var newsLink = $("#likeBut3").attr('data-url');
+        favorites.push(newsTitle, newsLink); // {title: title, link: link}
+       console.log(favorites);
+       })
+
+       $("#likeBut1").on("click", function() {
+        var newsTitle = $("#likeBut4").attr('data-title');
+        var newsLink = $("#likeBut4").attr('data-url');
+        favorites.push(newsTitle, newsLink); // {title: title, link: link}
+       console.log(favorites);
+       })
+
+       $("#likeBut1").on("click", function() {
+        var newsTitle = $("#likeBut5").attr('data-title');
+        var newsLink = $("#likeBut5").attr('data-url');
+        favorites.push(newsTitle, newsLink); // {title: title, link: link}
+       console.log(favorites);
+       })
+
+       $("#likeBut6").on("click", function() {
+        var newsTitle = $("#likeBut6").attr('data-title');
+        var newsLink = $("#likeBut6").attr('data-url');
+        favorites.push(newsTitle, newsLink); // {title: title, link: link}
+       console.log(favorites);
+       })
+      }) 
+    </script>
+
+
+
   </body>
   <footer>
       <title>News Ticker Demo</title>

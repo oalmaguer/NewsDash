@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
   searchNews("World");
 
@@ -156,4 +157,5 @@ $(document).ready(function() {
     favorites.push({ title: newsTitle, link: newsLink }); // {title: title, link: link}
     console.log(favorites);
   });
+
 });

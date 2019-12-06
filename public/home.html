@@ -1,13 +1,20 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ 
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./home.js"></script>
+    <script src="./urls.js"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     
     <title>News Dash</title>
+    
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -136,14 +143,15 @@
                 <div class="card-body">
                   <h3 class="card-title card1-hl">Headline</h3>
                   <p id="pub-date1" class ="publish_date">Published on:</p>
+                  <p class="card-title" id="card1-src">Source</p>
                  
                   <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter1">
     Read More
   </button>
  
   <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -152,12 +160,13 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body" id="modalbody1">
-         
+        <div class="modal-body">
+         <p id="modalBody1"></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <!-- <button type="button" id="srcBtn1" class="btn btn-primary">See the full article</button> -->
+          <a href="www.google.com" id="srcBtn1" class="btn btn-primary">See full article</a>
         </div>
       </div>
     </div>
@@ -174,27 +183,28 @@
                 <div class="card-body">
                   <h3 class="card-title card2-hl">Headline</h3>
                   <p id="pub-date2"class ="publish_date">Published on:</p>
+                  <p class="card-title" id="card2-src">Source</p>
                  
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">
                       Read More
                     </button>
                    
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                       <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                            <h5 class="modal-title" id="modalh2">Modal title</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                             </button>
                           </div>
-                          <div class="modal-body">
-                            ...
+                          <div class="modal-body" id="modalBody2">
+                            
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <a href="" id="srcBtn2" class="btn btn-primary">See the full article</a>
                           </div>
                         </div>
                       </div>
@@ -212,26 +222,27 @@
                 <div class="card-body">
                   <h3 class="card-title card3-hl">Headline</h3>
                   <p id="pub-date3" class ="publish_date">Published on:</p>
-                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                  <p class="card-title" id="card3-src">Source</p>
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter3">
     Read More
   </button>
  
   <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <h5 class="modal-title" id="modalh3">Modal title</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" id="modalBody3">
           ...
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <a href="" id="srcBtn3" class="btn btn-primary">See the full article</a>
         </div>
       </div>
     </div>
@@ -249,26 +260,27 @@
                 <div class="card-body">
                   <h3 class="card-title card4-hl">Headline</h3>
                   <p id="pub-date4" class ="publish_date">Published on:</p>
-                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                  <p class="card-title" id="card4-src">Source</p>
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter4">
     Read More
   </button>
  
   <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <h5 class="modal-title" id="modalh4">Modal title</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" id="modalBody4">
           ...
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <a href="" id="srcBtn4" class="btn btn-primary">See the full article</a>
         </div>
       </div>
     </div>
@@ -285,26 +297,27 @@
                 <div class="card-body">
                   <h3 class="card-title card5-hl">Headline</h3>
                   <p id="pub-date5"class ="publish_date">Published on:</p>
-                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                  <p class="card-title" id="card5-src">Source</p>
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter5">
     Read More
   </button>
  
   <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal fade" id="exampleModalCenter5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <h5 class="modal-title" id="modalh5">Modal title</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" id="modalBody5">
           ...
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <a href="" id="srcBtn5" class="btn btn-primary">See the full article</a>
         </div>
       </div>
     </div>
@@ -321,26 +334,27 @@
                 <div class="card-body">
                   <h3 class="card-title card6-hl">Headline</h3>
                   <p id="pub-date6"class ="publish_date">Published on:</p>
-                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                  <p class="card-title" id="card6-src">Source</p>
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter6">
     Read More
   </button>
  
   <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal fade" id="exampleModalCenter6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <h5 class="modal-title" id="modalh6">Modal title</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" id="modalBody6">
           ...
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <a href="" id="srcBtn6" class="btn btn-primary">See the full article</a>
         </div>
       </div>
     </div>
@@ -351,6 +365,15 @@
         </div>
       </div>
     </div>
+
+
+
+
+
+
+
+  </body>
+
     <footer>
         <title>News Ticker Demo</title>
         <div class="tcontainer">

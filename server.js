@@ -53,13 +53,18 @@ app.post("/api/auth", function(req, res) {
   var username = req.body.username;
   var password = req.body.password;
   var email = req.body.email;
-  if (username && password) {
+  if (username != null) {
     connection.query(
       "INSERT INTO accounts (username, password, email) VALUES (?, ?, ?)",
       [username, password, email],
       function(error, results, fields) {
+        console.log(error);
         if (username != null) {
           console.log("Goood");
+          console.log(username);
+          console.log(password);
+          console.log(email);
+
           res.send("User with the name " + username + " is registered");
         } else {
           console.log("error");

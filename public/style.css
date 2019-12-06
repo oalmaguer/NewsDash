@@ -133,3 +133,7 @@ hr {
   color: white;
   text-decoration: none;
 }
+
+.modal-body {
+  font-family: "Lucida Sans";
+}

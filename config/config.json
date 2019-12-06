@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "mfs2231996",
-    "database": "newsdash",
+    "database": "nodelogin",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false

@@ -1,5 +1,6 @@
 favorites = [];
 
+searchNews("World");
 var apiKey = "23de237b3d5a45c2becdee407614db97";
 
 function searchNews(search) {
@@ -90,7 +91,6 @@ function searchNews(search) {
     }
   });
 } // end of search news function
-searchNews("World");
 
 $(".newsBtn").on("click", function() {
   var search = $("#searchForm").val();
@@ -111,21 +111,21 @@ $("#likeBut2").on("click", function() {
   console.log(favorites);
 });
 
-$("#likeBut1").on("click", function() {
+$("#likeBut3").on("click", function() {
   var newsTitle = $("#likeBut3").attr("data-title");
   var newsLink = $("#likeBut3").attr("data-url");
   favorites.push(newsTitle, newsLink); // {title: title, link: link}
   console.log(favorites);
 });
 
-$("#likeBut1").on("click", function() {
+$("#likeBut4").on("click", function() {
   var newsTitle = $("#likeBut4").attr("data-title");
   var newsLink = $("#likeBut4").attr("data-url");
   favorites.push(newsTitle, newsLink); // {title: title, link: link}
   console.log(favorites);
 });
 
-$("#likeBut1").on("click", function() {
+$("#likeBut5").on("click", function() {
   var newsTitle = $("#likeBut5").attr("data-title");
   var newsLink = $("#likeBut5").attr("data-url");
   favorites.push(newsTitle, newsLink); // {title: title, link: link}

@@ -122,21 +122,25 @@ app.post("/auth", function(req, res) {
   var username = req.body.username;
   var password = req.body.password;
   if (username && password) {
-    connection.query(
-      "SELECT * FROM accounts WHERE username = ? AND password = ?",
-      [username, password],
-      function(error, results, fields) {
-        if (results.length > 0) {
-          req.session.loggedin = true;
-          req.session.username = username;
-
-          res.redirect("/home");
-        } else {
-          res.send("Incorrect username or password");
-        }
-        res.end();
+    // connection.query(
+    //   "SELECT * FROM accounts WHERE username = ? AND password = ?",
+    //   [username, password],
+    db.Account.findOne({
+      where: {
+        username: username,
+        password: password
       }
-    );
+    }).then(function(results) {
+      if (results) {
+        req.session.loggedin = true;
+        req.session.username = username;
+
+        res.redirect("/home");
+      } else {
+        res.send("Incorrect username or password");
+      }
+      res.end();
+    });
   } else {
     res.send("Please enter pass or username");
     res.end();

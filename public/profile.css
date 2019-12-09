@@ -1,0 +1,17 @@
+.img-thumbnail {
+  height: 250px;
+  width: 250px;
+  margin-bottom: 30px;
+}
+
+.list-unstyled {
+  visibility: hidden;
+}
+
+.media-body {
+  visibility: hidden;
+}
+
+a {
+  color: white;
+}

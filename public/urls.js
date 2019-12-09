@@ -25,12 +25,14 @@ $.ajax({
     .attr("href", response.articles[5].url);
 });
 
+
+
 $.ajax({
   url:
     "https://newsapi.org/v2/top-headlines?q=world&apiKey=23de237b3d5a45c2becdee407614db97",
   method: "GET"
 }).then(function(tickerResponse) {
-  console.log("ticker response is " + tickerResponse);
+  console.log(tickerResponse);
 
   $("#tick1")
     .text(tickerResponse.articles[0].title)

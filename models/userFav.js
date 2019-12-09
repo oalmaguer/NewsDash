@@ -1,19 +1,11 @@
 //model is going to be composed of a news story that is a favorite
 module.exports = function(sequelize, Datatypes) {
-  var Account = sequelize.define("Account", {
+  var UserFav = sequelize.define("UserFav", {
     username: {
       type: Datatypes.STRING,
       allowNull: false
     },
-    password: {
-      type: Datatypes.STRING,
-      allowNull: false
-    },
-    email: {
-      type: Datatypes.STRING,
-      allowNull: false
-    },
-    userDesc: {
+    newsHl: {
       type: Datatypes.STRING,
       allowNull: true
     },
@@ -21,14 +13,10 @@ module.exports = function(sequelize, Datatypes) {
       type: Datatypes.STRING,
       allowNull: true
     },
-    newsHl: {
-      type: Datatypes.STRING,
-      allowNull: true
-    },
-    newsImgUrl: {
+    imgUrl: {
       type: Datatypes.STRING,
       allowNull: true
     }
   });
-  return Account;
+  return UserFav;
 };

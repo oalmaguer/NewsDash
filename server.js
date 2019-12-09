@@ -31,6 +31,7 @@
 // // });
 
 //oliver server
+
 const express = require("express");
 const app = express();
 var path = require("path");
@@ -43,56 +44,60 @@ var session = require("express-session");
 var bodyParser = require("body-parser");
 var path = require("path");
 var connection = mysql.createConnection(config);
+// var Favorite = require("./models/favorite");
+var db = require("./models");
+const Sequelize = require("sequelize");
+
+const sequelize = new Sequelize("nodelogin", "root", "aTl310195", {
+  host: "localhost",
+  dialect: "mysql"
+});
 
 //register
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// module.exports = function(app) {
+// Get all books
+app.get("/api/all", function(req, res) {
+  db.Account.findAll({}).then(function(results) {
+    res.json(results);
+  });
+});
+
+app.get("/api/all/favorites", function(req, res) {
+  db.UserFav.findAll({}).then(function(results) {
+    res.json(results);
+  });
+});
+// };
+
 app.post("/api/auth", function(req, res) {
   var username = req.body.username;
   var password = req.body.password;
   var email = req.body.email;
   if (username && password) {
-    connection.query(
-      "INSERT INTO accounts (username, password, email) VALUES (?, ?, ?)",
-      [username, password, email],
-      function(error, results, fields) {
-        if (username != null) {
-          console.log("Goood");
-          res.send("User with the name " + username + " is registered");
-        } else {
-          console.log("error");
-          res.send("Please enter pass or username");
-        }
-        res.end;
+    db.Account.create({
+      username: username,
+      password: password,
+      email: email
+    }).then(function(error, results, fields) {
+      console.log(error);
+      console.log(results);
+      console.log(fields);
+      if (username != null) {
+        res.redirect("/");
+      } else {
+        console.log("error");
+        res.send("Please enter pass or username");
       }
-    );
+      res.end;
+    });
   }
 });
 
 //favorites
-
-app.post("/api/description", function(req, res) {
-  var userDesc = req.body.information;
-  if (userDesc) {
-    connection.query(
-      'UPDATE accounts SET userDesc="' + userDesc + '" WHERE id=1',
-      [userDesc],
-      function(error, results, fields) {
-        console.log(error);
-        if (userDesc != null) {
-          console.log(userDesc);
-          res.send("Added user description");
-        } else {
-          console.log("error");
-          res.send("Please enter description");
-        }
-        res.end;
-      }
-    );
-  }
-});
 
 //end of register
 
@@ -138,10 +143,81 @@ app.post("/auth", function(req, res) {
   }
 });
 
+app.post("/description", function(req, res) {
+  var user = req.session.username;
+  db.Account.update(
+    { userDesc: req.body.information },
+    {
+      where: { username: req.session.username }
+    }
+  ).then(function(dbPost) {
+    res.redirect("/profile");
+  });
+});
+
+app.post("/api/favorites/test", function(req, res) {
+  var user = req.session.username;
+  console.log(req.body.newsHl);
+  console.log(req.body.newsUrl);
+  console.log(req.body.imgUrl);
+  if (user != null) {
+    db.UserFav.create({
+      username: user,
+      newsHl: req.body.newsHl,
+      newsUrl: req.body.newsUrl,
+      imgUrl: req.body.imgUrl
+    }).then(function(results) {
+      res.redirect("/home");
+    });
+  } else {
+    console.log("error");
+  }
+});
+
+app.post("/api/favorites/test2", function(req, res) {
+  var user = req.session.username;
+  console.log(req.body.newsHl);
+  console.log(req.body.newsUrl);
+  console.log(req.body.imgUrl);
+  if (user != null) {
+    db.UserFav.create({
+      username: user,
+      newsHl: req.body.newsHl,
+      newsUrl: req.body.newsUrl,
+      imgUrl: req.body.imgUrl
+    }).then(function(results) {
+      res.redirect("/home");
+    });
+  } else {
+    console.log("error");
+  }
+});
+
+app.post("/api/favorites/test3", function(req, res) {
+  var user = req.session.username;
+  console.log(req.body.newsHl);
+  console.log(req.body.newsUrl);
+  console.log(req.body.imgUrl);
+  if (user != null) {
+    db.UserFav.create({
+      username: user,
+      newsHl: req.body.newsHl,
+      newsUrl: req.body.newsUrl,
+      imgUrl: req.body.imgUrl
+    }).then(function(results) {
+      res.redirect("/home");
+    });
+  } else {
+    console.log("error");
+  }
+});
+// });
+
 app.post("/userProfile", function(req, res) {
   if (req.session.loggedin) {
     var user = req.session.username;
-    res.end(`${"Welcome back " + user}`);
+    var email = req.session.email;
+    var description = req.res.end(`${"Hello " + user}`);
   } else {
     res.sendFile("/error");
   }
@@ -149,17 +225,38 @@ app.post("/userProfile", function(req, res) {
 });
 
 app.post("/userDesc", function(req, res) {
-  connection.query("SELECT userDesc FROM accounts WHERE id =1", function(
-    err,
-    result,
-    fields
-  ) {
-    if (err) throw err;
-    console.log("Result is " + result);
-    var obj = JSON.stringify(result);
-    console.log("userdesc var " + obj);
-    res.end(`${"Your description " + obj[0]["userDesc"]}`);
-    console.log(obj[0]["userDesc"]);
+  db.Account.findOne({
+    where: {
+      username: req.session.username
+    }
+  }).then(function(dbPost) {
+    req.res.send({
+      userDesc: dbPost.userDesc,
+      username: dbPost.username
+    });
+  });
+});
+
+app.post("/userFavorites", function(req, res) {
+  db.UserFav.findAll({
+    where: {
+      username: req.session.username
+    }
+  }).then(function(result) {
+    var arrayHl = [];
+    var arrayNewsUrl = [];
+    var arrayImgUrl = [];
+    for (var i = 0; i < result.length; i++) {
+      console.log(result[i].newsHl);
+      arrayHl.push(result[i].newsHl);
+      arrayNewsUrl.push(result[i].newsUrl);
+      arrayImgUrl.push(result[i].imgUrl);
+    }
+    req.res.send({
+      newsHl: arrayHl,
+      newsUrl: arrayNewsUrl,
+      imgUrl: arrayImgUrl
+    });
   });
 });
 
@@ -217,6 +314,8 @@ app.use(
 // =============================================================
 require("./routes/html-routes")(app);
 
-app.listen(PORT, function() {
-  console.log("Listening on http://localhost:" + PORT);
+db.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
+    console.log("Listening on http://localhost:" + PORT);
+  });
 });

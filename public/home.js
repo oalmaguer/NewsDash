@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
   searchNews("World");
 
@@ -74,6 +73,8 @@ $(document).ready(function() {
       $("#likeBut1").attr("data-title", response.articles[0].title);
       $("#likeBut1").attr("data-url", response.articles[0].url);
       $("#srcBtn1").attr("href", response.articles[0].url);
+      $("#newsHeadline").text(response.articles[0].title);
+      $("#newsHeadline").css("visibility", "hidden");
 
       $("#likeBut2").attr("data-title", response.articles[1].title);
       $("#likeBut2").attr("data-url", response.articles[1].url);
@@ -97,6 +98,7 @@ $(document).ready(function() {
     });
 
     var user;
+
     $.post("/userInfo", { user: user }, function(data) {
       if (data != null) {
         $("#user").text(data);
@@ -119,13 +121,42 @@ $(document).ready(function() {
   $("#likeBut1").on("click", function() {
     var newsTitle = $("#likeBut1").attr("data-title");
     var newsLink = $("#likeBut1").attr("data-url");
-    favorites.push({ title: newsTitle, link: newsLink }); // {title: title, link: link}
+    var imgUrl = $(".card1Img").attr("src");
+    $.ajax({
+      url: "/api/favorites/test",
+      type: "POST",
+      data: {
+        newsHl: newsTitle,
+        newsUrl: newsLink,
+        imgUrl: imgUrl
+      },
+      success: function(result) {
+        var obj = JSON.stringify(result);
+        console.log(obj);
+      }
+    });
+
+    favorites.push({ title: newsTitle, link: newsLink });
     console.log(favorites);
   });
 
   $("#likeBut2").on("click", function() {
     var newsTitle = $("#likeBut2").attr("data-title");
     var newsLink = $("#likeBut2").attr("data-url");
+    var imgUrl = $(".card2Img").attr("src");
+    $.ajax({
+      url: "/api/favorites/test",
+      type: "POST",
+      data: {
+        newsHl: newsTitle,
+        newsUrl: newsLink,
+        imgUrl: imgUrl
+      },
+      success: function(result) {
+        var obj = JSON.stringify(result);
+        console.log(obj);
+      }
+    });
     favorites.push({ title: newsTitle, link: newsLink }); // {title: title, link: link}
     console.log(favorites);
   });
@@ -133,6 +164,20 @@ $(document).ready(function() {
   $("#likeBut3").on("click", function() {
     var newsTitle = $("#likeBut3").attr("data-title");
     var newsLink = $("#likeBut3").attr("data-url");
+    var imgUrl = $(".card3Img").attr("src");
+    $.ajax({
+      url: "/api/favorites/test",
+      type: "POST",
+      data: {
+        newsHl: newsTitle,
+        newsUrl: newsLink,
+        imgUrl: imgUrl
+      },
+      success: function(result) {
+        var obj = JSON.stringify(result);
+        console.log(obj);
+      }
+    });
     favorites.push({ title: newsTitle, link: newsLink }); // {title: title, link: link}
     console.log(favorites);
   });
@@ -140,6 +185,20 @@ $(document).ready(function() {
   $("#likeBut4").on("click", function() {
     var newsTitle = $("#likeBut4").attr("data-title");
     var newsLink = $("#likeBut4").attr("data-url");
+    var imgUrl = $(".card4Img").attr("src");
+    $.ajax({
+      url: "/api/favorites/test",
+      type: "POST",
+      data: {
+        newsHl: newsTitle,
+        newsUrl: newsLink,
+        imgUrl: imgUrl
+      },
+      success: function(result) {
+        var obj = JSON.stringify(result);
+        console.log(obj);
+      }
+    });
     favorites.push({ title: newsTitle, link: newsLink }); // {title: title, link: link}
     console.log(favorites);
   });
@@ -147,6 +206,20 @@ $(document).ready(function() {
   $("#likeBut5").on("click", function() {
     var newsTitle = $("#likeBut5").attr("data-title");
     var newsLink = $("#likeBut5").attr("data-url");
+    var imgUrl = $(".card5Img").attr("src");
+    $.ajax({
+      url: "/api/favorites/test",
+      type: "POST",
+      data: {
+        newsHl: newsTitle,
+        newsUrl: newsLink,
+        imgUrl: imgUrl
+      },
+      success: function(result) {
+        var obj = JSON.stringify(result);
+        console.log(obj);
+      }
+    });
     favorites.push({ title: newsTitle, link: newsLink }); // {title: title, link: link}
     console.log(favorites);
   });
@@ -154,8 +227,21 @@ $(document).ready(function() {
   $("#likeBut6").on("click", function() {
     var newsTitle = $("#likeBut6").attr("data-title");
     var newsLink = $("#likeBut6").attr("data-url");
+    var imgUrl = $(".card6Img").attr("src");
+    $.ajax({
+      url: "/api/favorites/test",
+      type: "POST",
+      data: {
+        newsHl: newsTitle,
+        newsUrl: newsLink,
+        imgUrl: imgUrl
+      },
+      success: function(result) {
+        var obj = JSON.stringify(result);
+        console.log(obj);
+      }
+    });
     favorites.push({ title: newsTitle, link: newsLink }); // {title: title, link: link}
     console.log(favorites);
   });
-
 });

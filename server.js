@@ -53,6 +53,39 @@ const sequelize = new Sequelize("nodelogin", "root", "aTl310195", {
   dialect: "mysql"
 });
 
+
+//chat
+
+// var io = require("socket.io").listen(server);
+// var Connections = []; 
+
+// io.sockets.on("connection", function(socket) {
+//   //connection
+//   Connections.push(socket);
+//   io.sockets.emit("new user"); //checks if anyone is online
+
+//   console.log("users connected: %s", Connections.length);
+
+//   socket.on("disconnect", function(data) {
+//     users.splice(users.indexOf(socket.username), 1); //accessing the array users
+
+//     io.sockets.emit("user left");
+
+//     Connections.splice(Connections.indexOf(socket), 1);
+//     console.log("user disconnected: %s ", Connections.length);
+//   });
+
+//   socket.on("send message", function(data) {
+//     console.log(data);
+//     io.sockets.emit("new message", { msg: data });
+//   });
+// });
+
+//end of chat
+
+
+
+
 //register
 
 app.use(bodyParser.urlencoded({ extended: true }));

@@ -111,6 +111,26 @@ $(document).ready(function() {
     });
   } // end of search news function
 
+  $("#politics").on("click", function() {
+    searchNews("politics");
+  });
+
+  $("#science").on("click", function() {
+    searchNews("science");
+  });
+
+  $("#education").on("click", function() {
+    searchNews("education");
+  });
+
+  $("#cnn").on("click", function() {
+    searchNews("cnn");
+  });
+
+  $("#wired").on("click", function() {
+    searchNews2("wired");
+  });
+
   $(".newsBtn").on("click", function() {
     var search = $("#searchForm").val();
     searchNews(search);
